@@ -5,6 +5,7 @@ import { getUserById } from "./lib/data/user";
 import authConfig from "./auth.config";
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
+  trustHost:true,
   pages: {
     signIn: "/auth/login",
     error: "/auth/error",
