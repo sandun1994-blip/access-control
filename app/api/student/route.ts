@@ -12,7 +12,7 @@ export async function GET() {
      
       
       const student = await db.student.findUnique({
-        where: { userId: Number(data.user.id) },
+        where: { userId: (data.user.id) },
       });
       return Response.json({ data: student }, { status: 200 });
     }

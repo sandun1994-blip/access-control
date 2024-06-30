@@ -10,7 +10,7 @@ export async function GET() {
   if (data?.user.role === UserRole.ADMIN) {
     if (data.user.id) {
       const admin = await db.admin.findUnique({
-        where: { userId: Number(data.user.id) },
+        where: { userId: (data.user.id) },
       });
 
       // console.log({admin});

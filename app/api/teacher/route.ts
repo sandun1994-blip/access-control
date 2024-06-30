@@ -10,7 +10,7 @@ export async function GET() {
   if (data?.user.role === UserRole.ADMIN || data?.user.role === UserRole.TEACHER) {
     if (data.user.id) {
       const teacher = await db.teacher.findUnique({
-        where: { userId: Number(data.user.id) },
+        where: { userId: (data.user.id) },
       });
       return Response.json({ data: teacher }, { status: 200 });
     }
